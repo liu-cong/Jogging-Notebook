@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center" >
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listHeader"
+        android:transcriptMode="alwaysScroll" />
+
+    <TableLayout
+        android:id="@+id/listHeader"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="6dp"
+            android:gravity="center_horizontal" >
+
+            <TextView
+                android:id="@+id/text_dashborad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal|center"
+                android:layout_weight="0.95"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="Dashboard"
+                android:textSize="@dimen/medium" />
+
+            <Button
+                android:id="@+id/button_menu"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:gravity="center|center_vertical|center_horizontal"
+                android:background="@drawable/roundedbutton"
+                android:onClick="startNewActivity"
+                android:text="+"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/large" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_marginTop="10dp"
+               >
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:scrollHorizontally="false"
+                android:singleLine="true"
+                android:text="Date"
+                android:textSize="@dimen/extrasmall" />
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:scrollHorizontally="false"
+                android:singleLine="true"
+                android:text="Duration"
+                android:textSize="@dimen/extrasmall" />
+
+            <TextView
+                android:id="@+id/distance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.27"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:scrollHorizontally="false"
+                android:singleLine="true"
+                android:text="Distance (km)"
+                android:textSize="@dimen/extrasmall" />
+
+            <TextView
+                android:id="@+id/speed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:scrollHorizontally="false"
+                android:singleLine="true"
+                android:text="Speed (m/s)"
+                android:textSize="@dimen/extrasmall" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+     <item
+        android:id="@+id/menu_add"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Add a new entry"/>
+     
+     <item
+        android:id="@+id/menu_filter"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Filter by date"/>
+     
+      <item
+        android:id="@+id/menu_clear"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Clear filter"/>
+     
+      <item
+        android:id="@+id/menu_weekly_view"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Toggle weekly view"/>
+</menu>

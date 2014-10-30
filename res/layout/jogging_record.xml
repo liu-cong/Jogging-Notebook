@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="40dp"
+    android:background="#E8AC6F"
+    android:orientation="horizontal" >
+        <TableRow  android:layout_marginLeft="5dp"
+            android:gravity="center_vertical|center_horizontal|center"
+            >
+
+            <TextView
+                android:id="@+id/entryid"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                 android:textSize="@dimen/small"
+                  android:textColor="#FFFFFF"
+                android:layout_weight="0" />
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="0dp"
+                android:gravity="center_vertical|center_horizontal|center"
+                android:layout_height="wrap_content"
+                 android:textSize="@dimen/small"
+                   android:textColor="#FFFFFF"
+                android:layout_weight="0.25" />
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="0dp"
+                android:gravity="center_vertical|center_horizontal|center"
+                android:layout_height="wrap_content"
+                 android:textSize="@dimen/small"
+                   android:textColor="#FFFFFF"
+                android:layout_weight="0.23" />
+
+            <TextView
+                android:id="@+id/distance"
+                android:layout_width="0dp"
+                android:gravity="center_vertical|center_horizontal|center"
+                android:layout_height="wrap_content"
+                 android:textSize="@dimen/small"
+                   android:textColor="#FFFFFF"
+                android:layout_weight="0.27" />
+
+            <TextView
+                android:id="@+id/speed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                  android:textColor="#FFFFFF"
+                android:gravity="center_vertical|center_horizontal|center"
+                android:textSize="@dimen/small" />
+
+        </TableRow>
+    </TableLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:maxLines="2"
+        android:singleLine="false"
+        android:text="Filter records by date"
+        android:textSize="@dimen/medium" />
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+         >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_horizontal"
+            android:maxLines="2"
+            android:singleLine="false"
+            android:text="Specify the dates that you want to display"
+            android:textSize="@dimen/small" />
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal" >
+
+            <TextView
+                android:id="@+id/text_from_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:text="From:"
+                android:textSize="@dimen/small" />
+
+            <Button
+                android:id="@+id/button_date1_filter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                 android:layout_weight="0.4"
+                android:layout_marginRight="15dp"
+                android:text="date1"
+                android:textSize="@dimen/small" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="25dp"
+            android:gravity="center_horizontal" >
+
+            <TextView
+                android:id="@+id/text_to_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:text="To:"
+                android:textSize="@dimen/small" />
+
+            <Button
+                android:id="@+id/button_date2_filter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="25dp"
+                android:text="date2"
+                android:textSize="@dimen/small" />
+
+          
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/button_filter"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_vertical|center_horizontal|center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="filterData"
+        android:textColor="#FFFFFF"
+        android:text="Apply" />
+
+</LinearLayout>
