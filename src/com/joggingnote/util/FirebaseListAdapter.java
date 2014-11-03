@@ -211,17 +211,28 @@ public abstract class FirebaseListAdapter<T> extends BaseAdapter {
 				count+=weeklyModels.get(i).size();
 			return count;
 		}
+		
+		if(filterApplied)
+		{
 		if(index_begin<=index_end&&index_end<models.size()&&index_begin>=0)
-			return filterApplied?index_end-index_begin+1:models.size();
+			return index_end-index_begin+1;
 		else return 0;
+		}
+		else
+			return models.size();
 	}
 
 	//this method is overriden in the child class JoggingRecordListAdapter as it requires more information form Class T
 	@Override
 	public Object getItem(int i) {
-		if(index_begin<=index_end&&index_end<models.size()&&index_begin>=0)
-			return filterApplied?models.get(index_end-i):models.get(models.size()-1-i);
+		if(filterApplied)
+		{
+			if(index_begin<=index_end&&index_end<models.size()&&index_begin>=0)
+				return models.get(index_end-i);
 			else	return null;
+		}
+		else 
+			return models.get(models.size()-1-i);
 	}
 
 
@@ -256,7 +267,7 @@ public abstract class FirebaseListAdapter<T> extends BaseAdapter {
 		notifyDataSetInvalidated();
 		return true;
 	}
-	
+
 	//removes the date filter
 	public void clearFilter(){
 		this.filterApplied=false;
@@ -273,14 +284,14 @@ public abstract class FirebaseListAdapter<T> extends BaseAdapter {
 		notifyDataSetChanged();
 		notifyDataSetInvalidated();
 	}
-	
+
 	//restore to daily view
 	public void clearWeeklyView(){
 		this.weeklyView=false;
 		notifyDataSetChanged();
 		notifyDataSetInvalidated();
 	}
-	
+
 	//group the data entries by week and create a new List to hold the new weekly data
 	public void createWeeklyList(){
 		ArrayList<T> days=new ArrayList<T>();
@@ -315,7 +326,7 @@ public abstract class FirebaseListAdapter<T> extends BaseAdapter {
 		weeklyModels=years;
 
 	}
-	
+
 
 	//find the begin Index of the entries to display once a date filter is set up
 	//because the entries are sorted on date, theirfore the indexes of the entries to

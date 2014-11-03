@@ -30,13 +30,18 @@ public class JoggingRecordListAdapter extends FirebaseListAdapter<JoggingRecord>
 				}
 			}
 		}
-		
-		if(index_begin<=index_end&&index_end<models.size()&&index_begin>=0)
-			return filterApplied?models.get(index_end-i):models.get(models.size()-1-i);
+
+		if(filterApplied)
+		{
+			if(index_begin<=index_end&&index_end<models.size()&&index_begin>=0)
+				return models.get(index_end-i);
 			else	return null;
+		}
+		else 
+			return models.get(models.size()-1-i);
 	}
-	
-	
+
+
 	//Returns a new JoggingRecord object with the average speed, overall time and distance of the times in one week. 
 	public JoggingRecord average (List<JoggingRecord> list){
 		if(list==null||list.size()==0) return null;
@@ -46,7 +51,7 @@ public class JoggingRecordListAdapter extends FirebaseListAdapter<JoggingRecord>
 		double speed=0;
 		String date2= String.valueOf(DateManager.getCalendar(list.get(0).getDate()).get(Calendar.YEAR))+" Week:"
 				+String.valueOf(DateManager.getCalendar(list.get(0).getDate()).get(Calendar.WEEK_OF_YEAR));
-		
+
 		for(int i=0;i<list.size();i++){
 			JoggingRecord record=list.get(i);
 			hours+=record.getHours();
@@ -59,7 +64,7 @@ public class JoggingRecordListAdapter extends FirebaseListAdapter<JoggingRecord>
 		speed=distance/seconds;
 		return new JoggingRecord(date2,hours,minutes,distance,speed);
 	}
-	
+
 
 	/**
 	 * Bind an instance of the <code>Chat</code> class to our view. This method is called by <code>FirebaseListAdapter</code>
