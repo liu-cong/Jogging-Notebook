@@ -16,7 +16,6 @@ public class DateManagerTest extends TestCase {
 	private final int MIN=30;
 	protected void setUp() throws Exception {
 		super.setUp();
-
 }
 
 public void testGetDate() {

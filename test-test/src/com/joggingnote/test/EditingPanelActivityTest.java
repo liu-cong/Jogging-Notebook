@@ -22,7 +22,6 @@ ActivityInstrumentationTestCase2<EditingPanelActivity>{
 		super(EditingPanelActivity.class);
 	} // end of SpinnerActivityTest constructor definition
 
-
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
