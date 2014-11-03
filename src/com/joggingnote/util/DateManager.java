@@ -7,13 +7,6 @@ import java.util.TimeZone;
 
 //this class is responsible for date conversions
 public class DateManager {
-	public static String getDate(long localEpochTime, TimeZone timezone){
-		Date date = new Date(localEpochTime);
-		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		format.setTimeZone(timezone);
-		String formatted = format.format(date);
-		return formatted.substring(0,11);
-	}
 
 	public static String getDate(Calendar c){
 		String date="";
@@ -41,7 +34,7 @@ public class DateManager {
 	
 	public static Calendar getCalendar(String date){
 		Calendar c= Calendar.getInstance();
-		c.set(Integer.parseInt(date.substring(0,4)),Integer.parseInt(date.substring(5,7)),Integer.parseInt(date.substring(8,10)));
+		c.set(Integer.parseInt(date.substring(0,4)),Integer.parseInt(date.substring(5,7))-1,Integer.parseInt(date.substring(8,10)));
 		return c;
 	}
 }

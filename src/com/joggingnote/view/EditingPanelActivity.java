@@ -13,6 +13,7 @@ import com.joggingnote.util.FirebaseCommunicator;
 import com.joggingnote.util.TimePickerFragment;
 import com.joggingnote.*;
 
+import android.app.Activity;
 import android.app.DialogFragment;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -25,7 +26,7 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
-public class EditingPanelActivity extends ActionBarActivity implements OnSeekBarChangeListener{
+public class EditingPanelActivity extends Activity implements OnSeekBarChangeListener{
 	private SeekBar bar; // declare seekbar object variable
 	private TextView textDistance;//show the current distance corresponding to the seekbar position
 	private String provider=null,userid=null,entryid=null;

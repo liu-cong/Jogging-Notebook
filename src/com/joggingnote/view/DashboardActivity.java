@@ -145,9 +145,24 @@ public class DashboardActivity extends ListActivity {
 	@Override
 	public void onResume(){//refresh the ListView after returned from FilterPanelActivity
 		super.onResume();
+		
+		
+		if(weeklyView)
+		{
+			joggingRecordListAdapter.setWeeklyView();
+		}
+		
+		else{
+			joggingRecordListAdapter.clearWeeklyView();
+		}
+		
 		if(filterApplied)
 		{
 			joggingRecordListAdapter.setFilter(date_begin, date_end);
+		}
+		
+		else{
+			joggingRecordListAdapter.clearFilter();
 		}
 	}
 
