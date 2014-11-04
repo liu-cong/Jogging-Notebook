@@ -301,8 +301,8 @@ public abstract class FirebaseListAdapter<T> extends BaseAdapter {
 		else return;
 		for(int i=modelNames.size()-2;i>=0;i--){
 			//check the new entry
-			Calendar pre=DateManager.getCalendar(modelNames.get(i+1));
-			Calendar cur=DateManager.getCalendar(modelNames.get(i));
+			Calendar pre=DateManager.getCalendar(DateManager.convert2DisplayDate(modelNames.get(i+1)));
+			Calendar cur=DateManager.getCalendar(DateManager.convert2DisplayDate(modelNames.get(i)));
 			if (pre.get(Calendar.YEAR)==cur.get(Calendar.YEAR)){
 				if(pre.get(Calendar.WEEK_OF_YEAR)==cur.get(Calendar.WEEK_OF_YEAR)){
 					days.add(models.get(i));

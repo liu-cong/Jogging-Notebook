@@ -166,13 +166,13 @@ GoogleApiClient.OnConnectionFailedListener {
 				mGoogleLoginClicked = true;
 				if (!mGoogleApiClient.isConnecting()) {
 					if (mGoogleConnectionResult != null) {
-						resolveSignInError();
+						//resolveSignInError();
 					} else if (mGoogleApiClient.isConnected()) {
-						getGoogleOAuthTokenAndLogin();
+						//getGoogleOAuthTokenAndLogin();
 					} else {
 						/* connect API now */
 						Log.d(TAG, "Trying to connect to Google API");
-						mGoogleApiClient.connect();
+						//mGoogleApiClient.connect();
 					}
 				}
 			}
@@ -192,7 +192,7 @@ GoogleApiClient.OnConnectionFailedListener {
 		mTwitterLoginButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				loginWithTwitter();
+				//loginWithTwitter();
 			}
 		});
 
@@ -203,7 +203,7 @@ GoogleApiClient.OnConnectionFailedListener {
 		mPasswordLoginButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				loginWithPassword();
+				//loginWithPassword();
 			}
 		});
 
@@ -215,7 +215,7 @@ GoogleApiClient.OnConnectionFailedListener {
 		mAnonymousLoginButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				loginAnonymously();
+				//loginAnonymously();
 			}
 		});
 
@@ -301,16 +301,21 @@ GoogleApiClient.OnConnectionFailedListener {
 	}
 
 	public void enter(View v){
-		Intent intent=new Intent(getApplicationContext(),DashboardActivity.class);
-		intent.putExtra("provider", provider);
-		intent.putExtra("id", userid);
-		startActivity(intent);	
+		if(provider!=null&&userid!=null)
+		{
+			Intent intent=new Intent(getApplicationContext(),DashboardActivity.class);
+			intent.putExtra("provider", provider);
+			intent.putExtra("id", userid);
+			startActivity(intent);	
+		}
 	}
-	
+
 	/**
 	 * Unauthenticate from Firebase and from providers where necessary.
 	 */
 	private void logout() {
+		provider=null;
+		userid=null;
 		if (this.authData != null) {
 			/* logout of Firebase */
 			ref.unauth();
@@ -366,11 +371,11 @@ GoogleApiClient.OnConnectionFailedListener {
 	private void setAuthenticatedUser(AuthData authData) {
 		if (authData != null) {
 			/* Hide all the login buttons */
-//			mFacebookLoginButton.setVisibility(View.GONE);
-//			mGoogleLoginButton.setVisibility(View.GONE);
-//			mTwitterLoginButton.setVisibility(View.GONE);
-//			mPasswordLoginButton.setVisibility(View.GONE);
-//			mAnonymousLoginButton.setVisibility(View.GONE);
+			//			mFacebookLoginButton.setVisibility(View.GONE);
+			//			mGoogleLoginButton.setVisibility(View.GONE);
+			//			mTwitterLoginButton.setVisibility(View.GONE);
+			//			mPasswordLoginButton.setVisibility(View.GONE);
+			//			mAnonymousLoginButton.setVisibility(View.GONE);
 			//mLoggedInStatusTextView.setVisibility(View.VISIBLE);
 			/* show a provider specific status text */
 			String name = null;
@@ -387,16 +392,16 @@ GoogleApiClient.OnConnectionFailedListener {
 			} else {
 				Log.e(TAG, "Invalid provider: " + provider);
 			}
-//			if (name != null) {
-//				mLoggedInStatusTextView.setText("Logged in as " + name + " (" + provider + ")");
-//			}
+			//			if (name != null) {
+			//				mLoggedInStatusTextView.setText("Logged in as " + name + " (" + provider + ")");
+			//			}
 
 
 			//start new activity here
-//			Intent intent=new Intent(getApplicationContext(),DashboardActivity.class);
-//			intent.putExtra("provider", provider);
-//			intent.putExtra("id", userid);
-//			startActivity(intent);	
+			//			Intent intent=new Intent(getApplicationContext(),DashboardActivity.class);
+			//			intent.putExtra("provider", provider);
+			//			intent.putExtra("id", userid);
+			//			startActivity(intent);	
 
 		} else {
 			/* No authenticated user show all the login buttons */

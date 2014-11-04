@@ -61,7 +61,7 @@ public class JoggingRecordListAdapter extends FirebaseListAdapter<JoggingRecord>
 		hours+=minutes/60;
 		minutes%=60;
 		long seconds=hours*3600+minutes*60;
-		speed=distance/seconds;
+		speed=distance*1000/(double)seconds;
 		return new JoggingRecord(date2,hours,minutes,distance,speed);
 	}
 

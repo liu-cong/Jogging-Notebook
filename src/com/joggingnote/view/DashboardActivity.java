@@ -223,10 +223,8 @@ public class DashboardActivity extends ListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.menu_clear:
-			Log.e("filter",String.valueOf(filterApplied));
 			filterApplied=false;
 			joggingRecordListAdapter.clearFilter();
-			Log.e("filter",String.valueOf(filterApplied));
 			break;
 		case R.id.menu_add:
 			startEditActivity();

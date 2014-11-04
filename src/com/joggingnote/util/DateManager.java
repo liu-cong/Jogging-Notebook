@@ -37,4 +37,8 @@ public class DateManager {
 		c.set(Integer.parseInt(date.substring(0,4)),Integer.parseInt(date.substring(5,7))-1,Integer.parseInt(date.substring(8,10)));
 		return c;
 	}
+	
+	public static String convert2DisplayDate(String numDate){
+		return numDate.substring(0,4)+"-"+numDate.substring(4,6)+"-"+numDate.substring(6,8);
+	}
 }
